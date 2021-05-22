@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>10 sobre 10</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="public/css/master.css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <link href="/css/send.css" rel="stylesheet" type="text/css">
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- ADS -->
+  <section>
+    <div class="container-fluid">
+      <!-- navigation -->
+      <nav class="navbar fixed-top  navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="#">
+          <img src="images/Logoicon.svg" alt="" class="logo">
+          10 Sobre 10
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navegacion">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="#" class="navigation-button">Ingresa
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="navigation-button" href="/register">
+                Registrate
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+      </nav>
+  </section>
+    <div class="container-fluid presentacion">
+
+      <div class="row ">
+        <div class="form col-6">
+          <form class="needs-validation" method="post" action="/send" novalidate>
+
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Pregunta</label>
+              <textarea class="form-control" name="question" id="question" rows="6"></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <label class="form-label">Respuesta Correcta</label>
+                <input type="text" class="form-control" id="right" placeholder="" value="" name="right" required>
+                <div class="invalid-feedback">
+                  La respuesta Correcta es necesaria
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <label for="lastName" class="form-label">Respuesta incorrecta</label>
+                <input type="text" class="form-control" id="wrong0" placeholder="" value="" name="answer1" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <label for="lastName" class="form-label">Respuesta incorrecta</label>
+                <input type="text" class="form-control" id="wrong1" placeholder="" value="" name="answer2" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <label for="lastName" class="form-label">Respuesta incorrecta</label>
+                <input type="text" class="form-control" id="wrong2" placeholder="" value="" name="answer3" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+
+              <div class="  col-lg-6">
+                <label for="Categoria" class="form-label">Categoria</label>
+                <select class="form-select" id="cateogry" onchange="showCampo(this)" name="materia" required>
+                  <option value="">Elije</option>
+                  <option id="math">Matemáticas</option>
+                  <option id="len">Lengua y literatura</option>
+                  <option id="nature">Ciencias Naturales</option>
+                  <option id="social">Ciencias Sociales</option>
+                </select>
+                <div class="invalid-feedback">
+                  Elije una categoria
+                </div>
+              </div>
+
+              <div class="long col-lg-12">
+                <select class="form-select" id="campo" onchange="hideSubcampo(this)" name="campo" required>
+                  <option value="">Campo</option>
+                  <option class="math" id="algebra">Álgebra y Funciones</option>
+                  <option class="math" id="geometry">Geometría y Medida</option>
+                  <option class="math" id="esta">Estadística y Probabilidad</option>
+                  <option class="len" id="culture">Lengua y cultura</option>
+                  <option class="len" id="comunication">Comunicación oral</option>
+                  <option class="len" id="lecture">Lectura</option>
+                  <option class="len" id="writting">Escritura</option>
+                  <option class="len" id="literature">Literatura</option>
+                  <option class="nature" id="body">Cuerpo humano y salud</option>
+                  <option class="nature" id="world">El mundo de la química</option>
+                  <option class="nature" id="chemstry">La química y su lenguaje</option>
+                  <option class="nature" id="appliedchemstry">Química en acción</option>
+                  <option class="nature" id="force">Movimiento y fuerza</option>
+                  <option class="nature" id="energy">Energía, conservación y transferencia</option>
+                  <option class="nature" id="earth">La Tierra y el universo</option>
+                  <option class="nature" id="evolution">Evolución de los seres vivos</option>
+                  <option class="nature" id="celular">Biología celular y molecular</option>
+                  <option class="nature" id="animals">Biología animal y vegetal</option>
+                  <option class="social" id="origins">Los orígenes y las primeras culturas de la humanidad</option>
+                  <option class="social" id="middle">Edad Media y Modernidad</option>
+                  <option class="social" id="hybrid">Mestizaje y liberación</option>
+                  <option class="social" id="work">Trabajo y sociedad</option>
+                  <option class="social" id="citizenship">Ciudadanía y derechos</option>
+                  <option class="social" id="democracy">La democracia moderna</option>
+                  <option class="social" id="state">La democracia y la construcción de un Estado plurinacional</option>
+                  <option class="social" id="argumentation">La argumentación y la construcción del discurso lógico, oral y escrito</option>
+                </select>
+                <div class="invalid-feedback">
+                  Elije un campo
+                </div>
+              </div>
+
+
+              <div class="long col-lg-12">
+                <select class="form-select" id="subcampo" name="subcampo" required>
+                  <option value="">subcampo</option>
+                  <option class="math algebra">Números reales. Polinomios reales con coeficientes en R. Técnicas de factorización</option>
+                  <option class="math algebra">Ecuaciones de primer y segundo grado con una incógnita</option>
+                  <option class="math algebra">Operaciones con intervalos</option>
+                  <option class="math algebra">Sistemas de ecuaciones lineales</option>
+                  <option class="math algebra">Progresiones aritméticas y geométricas</option>
+                  <option class="math algebra">Función exponencial y función logarítmica</option>
+                  <option class="math algebra">Funciones trigonométricas</option>
+                  <option class="math algebra">Función polinomial</option>
+                  <option class="math algebra">Función cuadrática</option>
+                  <option class="math algebra">Funciones reales</option>
+                  <option class="math geometry">Vectores geométricos en el plano</option>
+                  <option class="math geometry">El espacio vectorial R2: rectas en R2</option>
+                  <option class="math geometry">Aplicaciones geométricas en R2: curvas planas en R2</option>
+                  <option class="math geometry">Programación lineal</option>
+                  <option class="math esta">Estadística descriptiva</option>
+                  <option class="len culture">Cultura escrita</option>
+                  <option class="len comunication">Comunicación oral e interacción social</option>
+                  <option class="len lecture">Comprensión de textos</option>
+                  <option class="len lecture">Uso de recursos</option>
+                  <option class="len writting">Producción de textos</option>
+                  <option class="len literature">Literatura</option>
+                  <option class="len literature">Escritura creativa</option>
+                  <option class="nature body">Sistemas digestivo, excretor, circulatorio y respiratorio</option>
+                  <option class="nature body">Sistema nervioso, endocrino, osteoartromuscular, inmunológico</option>
+                  <option class="nature world">Los gases</option>
+                  <option class="nature world">Modelo atómico y tabla periódica</option>
+                  <option class="nature world">El enlace químico</option>
+                  <option class="nature world">Formación de compuestos químicos</option>
+                  <option class="nature world">Compuestos orgánicos</option>
+                  <option class="nature world">Cinética y equilibrio químico</option>
+                  <option class="nature chemstry">Las reacciones químicas y sus ecuaciones</option>
+                  <option class="nature appliedchemstry">Química de disoluciones</option>
+                  <option class="nature force">La ley de Coulomb y el campo eléctrico</option>
+                  <option class="nature force">El campo magnético</option>
+                  <option class="nature force">Movimiento rectilíneo uniforme y movimiento rectilíneo uniformemente variado</option>
+                  <option class="nature force">Movimiento armónico simple</option>
+                  <option class="nature force">Movimiento en dos dimensiones</option>
+                  <option class="nature force">Las leyes de Newton</option>
+                  <option class="nature force">Impulso y cantidad de movimiento</option>
+                  <option class="nature force">Movimiento parabólico (proyectiles)</option>
+                  <option class="nature force">Movimiento circular uniforme</option>
+                  <option class="nature energy">Conservación de la energía</option>
+                  <option class="nature energy">Temperatura y calor</option>
+                  <option class="nature earth">Fuerza gravitacional</option>
+                  <option class="nature evolution">Origen y evolución de la vida</option>
+                  <option class="nature evolution">Herencia y genética</option>
+                  <option class="nature evolution">Diversidad biológica y conservación</option>
+                  <option class="nature celular">Estructura y fisiología celular</option>
+                  <option class="nature celular">Estudio de la célula y su morfología.</option>
+                  <option class="nature animals">Sistemas animales y vegetales</option>
+                  <option class="social origins">Historia e historiografía</option>
+                  <option class="social origins">El rol de la mujer y sus ejemplos latinoamericanos</option>
+                  <option class="social origins">Los aportes de las culturas antiguas</option>
+                  <option class="social origins">Grecia y su influencia</option>
+                  <option class="social middle">El papel de la Iglesia</option>
+                  <option class="social middle">El Renacimiento</option>
+                  <option class="social middle">La Revolución francesa</option>
+                  <option class="social hybrid">Culturas nativas de América</option>
+                  <option class="social hybrid">Instituciones de la conquista</option>
+                  <option class="social hybrid">La esclavitud colonial y su herencia en el Chota y Esmeraldas</option>
+                  <option class="social work">El feriado bancario,dolarización y migración</option>
+                  <option class="social work">Relaciones entre los ísmos y las independencias</option>
+                  <option class="social citizenship">Declaraciones y derechos</option>
+                  <option class="social citizenship">Principio de igualdad</option>
+                  <option class="social democracy">Derechos civiles y representación política</option>
+                  <option class="social democracy">Democracias y deliberación pública</option>
+                  <option class="social democracy">Consenso y disenso</option>
+                  <option class="social state">Plurinacionalidad y armonía social</option>
+                  <option class="social argumentation">Fundamentación de la lógica</option>
+                  <option class="social argumentation">Falacias y paradojas</option>
+
+                </select>
+                <div class="invalid-feedback">
+                  Elije un campo
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <label for="state" class="form-label">dificultad</label>
+                <select class="form-select" id="dificultad" name="dificulatad" required>
+                  <option value="">Choose...</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <label for="zip" class="form-label">Pistas</label>
+                <input type="text" class="form-control" id="tip" name="hint" placeholder="Ingresa aqui pistas">
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar pregunta</button>
+          </form>
+            <button id="checker"class="w-100 btn btn-secondary btn-lg">Revisar pregunta</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="preguntaSolo">
+
+
+          </button>
+
+
+          <div class="row">
+            <div class="col span-1-of-2">
+              <button type="button" class="botonRespuesta " id="rightans" value=""><span class="letter-options">A:</span>
+
+            </div>
+
+            <div class="col span-1-of-2">
+              <button type="button" class="botonRespuesta " id="wrongans0" value=""><span class="letter-options">B:</span>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-2">
+              <button type="button" class="botonRespuesta " id="wrongans1" value=""><span class="letter-options">C:</span>
+                </button>
+            </div>
+
+            <div class="col span-1-of-2">
+              <button type="button" class="botonRespuesta " id="wrongans2" value=""><span class="letter-options">D:</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script type="text/javascript" src="/javascript/send.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+</body>
+<footer>
+
+</footer>
+
+</html>

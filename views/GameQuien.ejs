@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>10 sobre 10</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="public/css/master.css">
+  <link href="/css/master.css" rel="stylesheet" type="text/css">
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- ADS -->
+  <section>
+    <div class="container-fluid">
+      <!-- navigation -->
+      <nav class="navbar fixed-top  navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="#">
+          <img src="images/Logoicon.svg" alt="" class="logo">
+          10 Sobres 10
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navegacion">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="#" class="navigation-button">Ingresa
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="navigation-button" href="/register">
+                Registrate
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+      </nav>
+  </section>
+  <section>
+    <div class="container-fluid">
+      <div class="row presentacion">
+        <div class="col-lg-2">
+          <% let d=12; let k=0%>
+          <%preguntas.forEach(function(pregunta){%>
+
+          <div class="btn-group " data-toggle="buttons">
+            <button type="button" class="btn btn-outline-primary index disabled" id="B<%- d; %>">
+              <%- d; %>
+            </button>
+          </div>
+
+          <%  k++; d--;})%>
+        </div>
+        <div class="col-lg">
+
+          <div class="comodines">
+            <button type="button" name="button" class="comodin btn phone">
+              <ion-icon name="call"></ion-icon>
+            </button>
+            <button type="button" name="button" class="comodin btn public">
+              <ion-icon name="contacts"></ion-icon>
+            </button>
+            <button type="button" name="button" class="comodin btn half">
+              <ion-icon name="eye-off"></ion-icon>
+            </button>
+
+          </div>
+
+          <%preguntas.forEach(function(pregunta){%>
+          <section id="<%=pregunta._id%>" class="pregunta">
+
+            <button type="button" class="preguntaSolo">
+              <%-pregunta.question%>
+
+            </button>
+
+
+            <div class="row">
+              <div class="col span-1-of-2">
+                <button type="button" class="botonRespuesta " value="<%=pregunta.answers[0].correct%>"><span class="letter-options">A:</span>
+                  <%- pregunta.answers[0].answer %></button>
+              </div>
+
+              <div class="col span-1-of-2">
+                <button type="button" class="botonRespuesta " value="<%=pregunta.answers[1].correct%>"><span class="letter-options">B:</span>
+                  <%- pregunta.answers[1].answer %></button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col span-1-of-2">
+                <button type="button" class="botonRespuesta " value="<%=pregunta.answers[2].correct%>"><span class="letter-options">C:</span>
+                  <%- pregunta.answers[2].answer %></button>
+              </div>
+
+              <div class="col span-1-of-2">
+                <button type="button" class="botonRespuesta " value="<%=pregunta.answers[3].correct%>"><span class="letter-options">D:</span>
+                  <%- pregunta.answers[3].answer %></button>
+              </div>
+            </div>
+
+
+
+          </section>
+
+
+          <%})%>
+          <div class="score hide">
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+   </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="/javascript/game.js"></script>
+    <script type="text/javascript" src="/javascript/QuienGame.js"></script>
+
+</body>
+<footer>
+
+</footer>
+
+</html>
